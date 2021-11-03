@@ -1,0 +1,15 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      product:
+        one: 'Produto'
+        other: 'Produtos'
+    attributes:
+      product:
+        code: 'Código'
+        title: 'Título'
+        description: 'Descritivo'
+        price: 'Valor'
+        quantity: 'Quantidade'
+        category: 'Categoria'

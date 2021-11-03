@@ -1,0 +1,14 @@
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
+<%= @product.code%>
+<%= @product.title %>
+<%= @product.description %>
+<%= @product.price %>
+<%= @product.quantity %>
+<%= @product.category %>
+
+<%= link_to 'Editar', edit_product_path(@product) %>
+<%= link_to 'Deletar', product_path(@product), method: :delete %>
+

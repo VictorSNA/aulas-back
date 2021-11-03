@@ -1,0 +1,11 @@
+<h1>Produtos</h1><br>
+<% if flash %>
+  <%= flash[:notice] %>
+  <%= flash[:alert] %>
+<% end %>
+
+<%= link_to 'Registrar produto', new_product_path %>
+
+<% @products.each do |product| %>
+  <%= link_to product.title, product %>
+<% end %>

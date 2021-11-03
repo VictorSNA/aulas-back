@@ -1,6 +1,17 @@
 version: '3'
 
 services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "senhasegura123!"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    networks:
+      - aulas-back-net
+
   web:
     build:
       context: .
@@ -12,6 +23,31 @@ services:
       BUNDLE_PATH: .gems
     volumes:
       - .:/aulas-back
+    depends_on:
+      - db
     ports:
       - "3000:3000"
-    command: "bundle exec rails s -b 0.0.0.0"
+    command: "bundle exec rails s -p 3000 -b 0.0.0.0"
+    networks:
+      - aulas-back-net
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "no-reply@teste.com"
+      PGADMIN_DEFAULT_PASSWORD: "outrasenhasegura123!"
+    volumes:
+       - pgadmin:/var/lib/pgadmin
+    ports:
+      - "16543:80"
+    depends_on:
+      - db
+    networks:
+      - aulas-back-net
+
+networks:
+  aulas-back-net:
+    driver: bridge
+
+volumes:
+    pgadmin:
