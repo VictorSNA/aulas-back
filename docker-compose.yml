@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      args:
+        app_path: /aulas-back
+    image: aulas-back
+    container_name: aulas-back
+    environment:
+      BUNDLE_PATH: .gems
+    volumes:
+      - .:/aulas-back
+    ports:
+      - "3000:3000"
+    command: "bundle exec rails s -b 0.0.0.0"
