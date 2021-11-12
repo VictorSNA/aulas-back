@@ -1,15 +1,15 @@
-current directory: /aulas-back/aulas-back/.gems/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
-/usr/local/bin/ruby -I /usr/local/lib/ruby/3.0.0 -r ./siteconf20211029-96-ar49lv.rb extconf.rb
+current directory: /aulas-back/.gems/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+/usr/local/bin/ruby -I /usr/local/lib/ruby/3.0.0 -r ./siteconf20211112-9-n1w6qc.rb extconf.rb
 creating Makefile
 
-current directory: /aulas-back/aulas-back/.gems/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+current directory: /aulas-back/.gems/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
 make DESTDIR\= clean
 
-current directory: /aulas-back/aulas-back/.gems/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+current directory: /aulas-back/.gems/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
 make DESTDIR\=
 compiling websocket_mask.c
 linking shared-object websocket_mask.so
 
-current directory: /aulas-back/aulas-back/.gems/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+current directory: /aulas-back/.gems/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20211029-96-sx4k8z
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20211112-9-5ujsbm

@@ -6,6 +6,29 @@
 
 <%= link_to 'Registrar produto', new_product_path %>
 
-<% @products.each do |product| %>
-  <%= link_to product.title, product %>
-<% end %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Código</th>
+      <th scope="col">Título</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Quantidade</th>
+      <th scope="col">Categoria</th>
+      <th scope="col">Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <th scope="row"><%= product.code %></th>
+        <td><%= product.title %></td>
+        <td><%= product.description %></td>
+        <td><%= product.quantity %></td>
+        <td><%= product.price %></td>
+        <td><%= product.category %></td>
+        <td><%= link_to "Gerenciar", product %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

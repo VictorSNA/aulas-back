@@ -1,5 +1,5 @@
-current directory: /aulas-back/aulas-back/.gems/ruby/3.0.0/gems/nio4r-2.5.8/ext/nio4r
-/usr/local/bin/ruby -I /usr/local/lib/ruby/3.0.0 -r ./siteconf20211029-96-mgdp7t.rb extconf.rb
+current directory: /aulas-back/.gems/ruby/3.0.0/gems/nio4r-2.5.8/ext/nio4r
+/usr/local/bin/ruby -I /usr/local/lib/ruby/3.0.0 -r ./siteconf20211112-9-omhlms.rb extconf.rb
 checking for unistd.h... yes
 checking for linux/aio_abi.h... yes
 checking for linux/io_uring.h... yes
@@ -11,10 +11,10 @@ checking for port_event_t in port.h... no
 checking for sys/resource.h... yes
 creating Makefile
 
-current directory: /aulas-back/aulas-back/.gems/ruby/3.0.0/gems/nio4r-2.5.8/ext/nio4r
+current directory: /aulas-back/.gems/ruby/3.0.0/gems/nio4r-2.5.8/ext/nio4r
 make DESTDIR\= clean
 
-current directory: /aulas-back/aulas-back/.gems/ruby/3.0.0/gems/nio4r-2.5.8/ext/nio4r
+current directory: /aulas-back/.gems/ruby/3.0.0/gems/nio4r-2.5.8/ext/nio4r
 make DESTDIR\=
 compiling bytebuffer.c
 compiling monitor.c
@@ -84,6 +84,6 @@ cc1: note: unrecognized command-line option ‘-Wno-parentheses-equality’ may 
 cc1: note: unrecognized command-line option ‘-Wno-constant-logical-operand’ may have been intended to silence earlier diagnostics
 linking shared-object nio4r_ext.so
 
-current directory: /aulas-back/aulas-back/.gems/ruby/3.0.0/gems/nio4r-2.5.8/ext/nio4r
+current directory: /aulas-back/.gems/ruby/3.0.0/gems/nio4r-2.5.8/ext/nio4r
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20211029-96-rv86kd
+/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20211112-9-45ykg5
