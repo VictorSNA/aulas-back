@@ -2,19 +2,23 @@ require 'rails_helper'
 
 feature 'Admin view product' do
   scenario 'successfuly' do
+    account = create(:account, permission: 'admin')
     product = create(:product)
+
+    visit accounts_path
+
+    fill_in 'Email', with: account.email
+    fill_in 'Senha', with: account.password
+    click_on 'Entrar'
 
     visit root_path
 
-    click_on 'Produtos'
-    click_on product.title
+    click_on 'Plantas'
+    click_on 'Vitrine de Plantas'
+    click_link(product.code)
 
-    expect(page).to have_content(product.code)
     expect(page).to have_content(product.title)
-    expect(page).to have_content(product.description)
     expect(page).to have_content(product.price)
-    expect(page).to have_content(product.quantity)
-    expect(page).to have_content(product.category)
   end
 end
 
@@ -22,16 +26,10 @@ feature 'Admin view all products' do
   scenario 'successfuly' do
     product = create(:product)
 
-    visit root_path
+    visit products_path
 
-    click_on 'Produtos'
-
-    expect(page).to have_content(product.code)
     expect(page).to have_content(product.title)
-    expect(page).to have_content(product.description)
     expect(page).to have_content(product.price)
-    expect(page).to have_content(product.quantity)
-    expect(page).to have_content(product.category)
   end
 end
 

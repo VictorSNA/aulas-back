@@ -1,0 +1,19 @@
+<div class="col-md-12 mb-4">
+  <h1 class="display-4 ms-3">Olá <%= @account.name %></h1>
+</div>
+<div class="row px-2 py-2">
+  <div class="col-md-12 mb-4 border rounded">
+    <div class="row px-2">
+      <div class="col-md-12 mt-3 mb-3">
+        <div class="col-md-12">
+          <% if flash[:notice] %>
+            <%= flash[:notice] %>
+            <%= flash[:alert] %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

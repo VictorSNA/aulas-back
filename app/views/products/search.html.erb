@@ -1,15 +1,14 @@
 <div class="col-md-12 mb-4">
-  <h1 class="display-4 ms-3">Vitrine</h1>
-  <% if @account.present? %>
-    <% if @account.admin? %>
-      <%= link_to 'Registrar produto', new_product_path, class: 'btn btn-success ms-3' %>
-    <% end %>
+  <h1 class="display-4 ms-3">Resultado da Pesquisa: <br>
+  <% if(@products.count > 1) %>
+    <%= @products.count %> produtos foram encontrados
+  <% elsif(@products.count == 1) %>
+    1 produto foi encontrado.
+  <% else %>
+    Nenhum produto foi encontrado, verifique a digitação e tente novamente.
   <% end %>
 
-  <% if flash %>
-    <%= flash[:notice] %>
-    <%= flash[:alert] %>
-  <% end %>
+  </h1>
 </div>
 
 <div class="row px-2 py-2">
@@ -26,16 +25,12 @@
           Preço: R$ <%= product.price %>
         </div>
         <div class="col-md-12 mt-2 text-end mb-3">
-          <a href=<%= product_path(product) %>>
-            <button class="btn btn-primary" >Detalhes</button>
+          <a href="./produto-detalhe.html">
+            <button class="btn btn-primary" >Adicionar ao carrinho</button>
           </a>
-          <% if @account.present? %>
-            <% if @account.admin? %>
-              <%= link_to "Gerenciar", product, id: product.code, class: 'btn btn-secondary' %>
-            <% end %>
-          <% end %>
         </div>
       </div>
     </div>
   <% end %>
 </div>
+

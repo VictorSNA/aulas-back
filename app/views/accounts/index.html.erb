@@ -1,0 +1,60 @@
+<div class="col-md-12 mb-4">
+  <h1 class="display-4 ms-3">Olá!</h1>
+  <% if flash[:notice] %>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+  <% end %>
+</div>
+<div class="row px-2 py-2">
+  <div class="col-md-12 mb-4 border rounded">
+    <div class="row px-2">
+      <% unless @account %>
+        <div class="col-md-6 mt-3 mb-3 border-end">
+          <div class="col-md-12 mb-5">
+            <h1 class="display-6">Já tenho cadastro</h1>
+          </div>
+          <div class="col-md-12">
+
+            <%= form_with url: login_path, local: true do |form| %>
+              <div class="mb-3 row">
+                <%= form.label :email, class: 'col-sm-2 col-form-label' %>
+                <div class="col-sm-10">
+                  <%= form.text_field :email, class: 'form-control' %>
+                </div>
+              </div>
+
+              <div class="mb-3 row">
+                <%= form.label :senha, class: 'col-sm-2 col-form-label' %>
+                <div class="col-sm-10">
+                  <%= form.text_field :senha, class: 'form-control', type: 'password' %>
+                </div>
+              </div>
+              <div class="col-md-12 text-end">
+                <%= form.submit 'Entrar', class: 'btn btn-primary', id: 'loginButton' %>
+              </div>
+
+              <div class="col-md-12 text-center mt-5">
+                Problemas de acesso?
+              </div>
+              <div class="col-md-12 text-center mb-3">
+                <a href="./esqueci.html">Esqueci minha senha</a>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-6 mt-5">
+          <p>
+          <h1 class="display-6 text-center mt-5">Ainda não tenho um cadastro</h1>
+          </p>
+          <div class="col-md-12 text-center">
+            <%= link_to 'Clique aqui', new_account_path, id: "novaConta", class: 'btn btn-primary' %>
+          </div>
+        </div>
+      <% else %>
+        <div class="col-md-12 mb-5">
+          <h1 class="display-6">Bem-vindo de volta <%= @account.name %></h1>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

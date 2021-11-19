@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *
+ */
+
+.custom-nav-menu a:link {
+  text-decoration: none;
+}
+
+.custom-nav-menu svg {
+  display: inline;
+  vertical-align: top;
+  margin-top: 3.51px;
+  cursor: pointer;
+}
+
+.custom-nav-menu label {
+  cursor: pointer;
+}
+
+.signin-icon {
+  text-align: right;
+}
+
+.signin-icon svg {
+  color: #26734F;
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .signin-icon {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 421px) and (max-width: 576px){
+  .logo {
+    text-align: center;
+  }
+
+  .signin-icon {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 420px){
+  .logo {
+    text-align: center;
+  }
+
+  .custom-nav-menu svg {
+    display: none;
+  }
+
+  .signin-icon {
+    text-align: center;
+  }
+}
+

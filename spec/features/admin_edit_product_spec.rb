@@ -2,12 +2,18 @@ require 'rails_helper'
 
 feature 'Admin edit product' do
   scenario 'successfuly' do
+    account = create(:account, permission: 'admin')
     product = create(:product)
 
-    visit root_path
+    visit accounts_path
 
-    click_on 'Produtos'
-    click_on product.title
+    fill_in 'Email', with: account.email
+    fill_in 'Senha', with: account.password
+    click_on 'Entrar'
+
+    visit products_path
+
+    click_link(product.code)
     click_on 'Editar'
     fill_in 'Código', with: 'CODIGODETESTE'
     fill_in 'Título', with: 'Mesa de ping-pong'
