@@ -1,5 +1,9 @@
-tmp/db/
+.env
+
+tmp/*
+.bash_history
 .gems/
+log/
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
