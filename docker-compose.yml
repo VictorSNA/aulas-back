@@ -18,6 +18,8 @@ services:
       args:
         app_path: /aulas-back
     image: aulas-back
+    env_file:
+      - .env
     container_name: aulas-back
     environment:
       BUNDLE_PATH: .gems
