@@ -2,9 +2,15 @@ require 'rails_helper'
 
 feature 'Admin register product' do
   scenario 'successfuly' do
+    account = create(:account, permission: 'admin')
 
-    visit root_path
-    click_on 'Produtos'
+    visit accounts_path
+
+    fill_in 'Email', with: account.email
+    fill_in 'Senha', with: account.password
+    click_on 'Entrar'
+
+    visit products_path
     click_on 'Registrar produto'
     fill_in 'Código', with: 'INFAN0001'
     fill_in 'Título', with: 'Bebê conforto'

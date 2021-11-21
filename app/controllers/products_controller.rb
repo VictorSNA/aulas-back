@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
+  before_action :current_account
+  before_action :authorized, only: [:edit, :new, :create, :destroy, :update]
+
   def index
-    @products = Product.all
+    @products = Product.where("quantity != 0")
   end
 
   def new
@@ -34,16 +37,19 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
 
-    UserMailer.welcome_email.deliver_now
-
     return redirect_to products_path,
       alert: 'Produto deletado com sucesso' if @product.destroy
   end
+
+  def search
+    @products = Product.where("lower(title) LIKE ?", "%#{params[:query].downcase}%")
+  end
+
   private
 
   def product_params
     params
       .require(:product)
-      .permit(:code, :title, :description, :price, :quantity, :category)
+      .permit(:code, :title, :description, :price, :quantity, :category, :photo)
   end
 end

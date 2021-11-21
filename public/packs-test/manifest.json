@@ -9,6 +9,16 @@
       "js.map": [
         "/packs-test/js/application-dd998cb6b794ecb7e8af.js.map"
       ]
+    },
+    "loopgarden": {
+      "js": [
+        "/packs-test/js/loopgarden-82243588da69a6097a09.js"
+      ],
+      "js.map": [
+        "/packs-test/js/loopgarden-82243588da69a6097a09.js.map"
+      ]
     }
-  }
+  },
+  "loopgarden.js": "/packs-test/js/loopgarden-82243588da69a6097a09.js",
+  "loopgarden.js.map": "/packs-test/js/loopgarden-82243588da69a6097a09.js.map"
 }

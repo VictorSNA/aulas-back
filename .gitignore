@@ -1,5 +1,10 @@
 .env
 
+storage/
+.bundle/
+.cache/
+.local/
+.npm/
 tmp/*
 .bash_history
 .gems/

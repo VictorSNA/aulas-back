@@ -1,0 +1,50 @@
+<div class="col-md-12 mb-4">
+  <h1 class="display-4 ms-3">Cesta</h1>
+</div>
+<div class="row px-2 py-2">
+  <div class="col-md-12 mb-4">
+    <div class="border rounded px-3 py-1">
+      <div class="col-md-12 mt-3">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Nome Produto</th>
+              <th scope="col">Quantidade</th>
+              <th scope="col">Preço Unitário</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @products.each do |product| %>
+              <tr>
+                <th><%= product[:title] %></th>
+                <td><%= product[:quantity] %></td>
+                <td>R$ <%= product[:price] %></td>
+                <td class="text-end">R$ <%= product[:total] %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-md-12 mt-3 px-2 py-1">
+        <div class="row border-bottom">
+          <div class="col-md-6">
+            <strong>Total:</strong>
+          </div>
+          <div class="col-md-6 text-end">
+            <strong>R$ <%= @total_price %></strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 mt-2 text-end mb-3">
+        <%= link_to 'Limpar cesta', cart_path, method: :delete, class: 'btn btn-primary' %>
+
+        <a href="#">
+          <button class="btn btn-primary" >Finalizar</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

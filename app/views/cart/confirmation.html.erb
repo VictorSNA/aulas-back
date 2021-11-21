@@ -1,0 +1,31 @@
+
+
+
+
+
+<div class="col-md-12 mb-4">
+  <h1 class="display-4 ms-3">Item adicionado</h1>
+</div>
+<div class="row px-2 py-2">
+  <div class="col-md-12 mb-4">
+    <div class="border rounded px-3 py-1">
+      <div class="col-md-12 mt-3">
+        <div class="col-md-12 mb-5">
+          <h1 class="display-6">Parabéns! Você adicionou o <%= @product.title %> ao seu carrinho.</h1>
+        </div>
+
+        <div class="col-md-12 mb-5">
+          <p>Quantidade: <%= @cart.quantity %></p>
+          <p>Preço unitário: R$ <%= @cart.unit_value %></p>
+          <p>Preço total: R$ <%= @cart.total %></p>
+        </div>
+
+      </div>
+
+      <div class="col-md-12 mt-2 text-end mb-3">
+        <%= link_to 'Ver carrinho', cart_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+</div>
+

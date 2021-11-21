@@ -5,6 +5,9 @@ pt-BR:
       product:
         one: 'Produto'
         other: 'Produtos'
+      account:
+        one: 'Conta'
+        other: 'Contas'
     attributes:
       product:
         code: 'Código'
@@ -13,3 +16,16 @@ pt-BR:
         price: 'Valor'
         quantity: 'Quantidade'
         category: 'Categoria'
+        photo: 'Foto'
+      account:
+        name: 'Nome'
+        password: 'Senha'
+        password_confirmation: 'Confirmação Senha'
+        cpf: 'CPF'
+        telephone: 'Telefone'
+        cep: 'CEP'
+        public_place: 'Logradouro'
+        address: 'Endereço'
+        address_number: 'Número'
+        complement: 'Complemento'
+

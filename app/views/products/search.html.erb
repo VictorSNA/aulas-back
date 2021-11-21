@@ -1,0 +1,40 @@
+<div class="col-md-12 mb-4">
+  <h1 class="display-4 ms-3">Resultado da Pesquisa: <br>
+  <% if(@products.count > 1) %>
+    <%= @products.count %> produtos foram encontrados
+  <% elsif(@products.count == 1) %>
+    1 produto foi encontrado.
+  <% else %>
+    Nenhum produto foi encontrado, verifique a digitação e tente novamente.
+  <% end %>
+
+  </h1>
+</div>
+
+<div class="row px-2 py-2">
+  <% @products.each do |product| %>
+    <div class="col-md-6 mb-4">
+      <div class="border rounded px-3 py-1">
+        <div class="col-md-12 mt-3">
+          <% if product.photo.present? %>
+            <%= image_tag product.photo, height: "300px", width: "100%" %>
+          <% else %>
+            <svg class="bd-placeholder-img" width="100%" height="300px" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="45%" y="50%" fill="#eceeef" dy=".3em">Foto Produto</text></svg>
+          <% end%>
+        </div>
+        <div class="col-md-12 mt-2">
+          <%= product.title %>
+        </div>
+        <div class="col-md-12 mt-1">
+          Preço: R$ <%= product.price %>
+        </div>
+        <div class="col-md-12 mt-2 text-end mb-3">
+          <a href=<%= product_path(product) %> id=<%= "detalhe-#{product.code}" %> >
+            <button class="btn btn-primary" >Detalhes</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
