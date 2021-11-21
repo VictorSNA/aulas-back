@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :account do
     name { "MyString" }
-    email { "MyString" }
+    email { "example@email.com" }
     password { "MyString" }
     cpf { "MyString" }
     telephone { "MyString" }

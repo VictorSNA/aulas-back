@@ -21,6 +21,18 @@ class AccountsController < ApplicationController
     end
   end
 
+  def reset_password; end
+
+  def send_email_password
+    account = Account.find_by_email(params[:email])
+
+    if account && UserMailer.with(account: account).reset_password.deliver_now
+      return redirect_to accounts_path, notice: 'Email enviado com sucesso'
+    end
+
+    redirect_to accounts_path, alert: 'Email não cadastrado'
+  end
+
   private
 
   def account_params

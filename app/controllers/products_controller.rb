@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :authorized, only: [:edit, :new, :create, :destroy, :update]
 
   def index
-    @products = Product.all
+    @products = Product.where("quantity != 0")
   end
 
   def new
@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @products = Product.where("title LIKE ?", params[:query])
+    @products = Product.where("lower(title) LIKE ?", "%#{params[:query].downcase}%")
   end
 
   private
@@ -50,6 +50,6 @@ class ProductsController < ApplicationController
   def product_params
     params
       .require(:product)
-      .permit(:code, :title, :description, :price, :quantity, :category)
+      .permit(:code, :title, :description, :price, :quantity, :category, :photo)
   end
 end

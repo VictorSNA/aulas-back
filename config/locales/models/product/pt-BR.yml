@@ -16,6 +16,7 @@ pt-BR:
         price: 'Valor'
         quantity: 'Quantidade'
         category: 'Categoria'
+        photo: 'Foto'
       account:
         name: 'Nome'
         password: 'Senha'

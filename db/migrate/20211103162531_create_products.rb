@@ -7,6 +7,7 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.float :price, null: false
       t.integer :quantity, null: false
       t.string :category, null: false
+      t.attachment :photo
 
       t.timestamps
     end
